@@ -1,0 +1,111 @@
+<div id="pagetop"></div>
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">MongoDB App</a>
+		</div>
+
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+			
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="https://github.com/marshallb007" target="_blank">Github Repo</a></li>
+						<li><a href="https://www.linkedin.com/in/marshallb" target="_blank">LinkedIn</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="container well">
+	<h2 class="text-center">News of the Day!</h2>
+<br>
+</div>
+
+
+<div class="container-fluid">
+<div class="row">
+	{{#unless commentview}}
+	<div class="col-xs-8 col-xs-offset-2">
+	{{/unless}}
+	{{#if commentview}}
+	<div class="col-md-6 col-xs-12">
+	{{/if}}
+
+		<div class="panel panel-default">
+			<div class="panel-heading text-center lead">
+				{{articles.title}}
+
+			</div>
+			<div class="panel-body articletexthere">
+
+				 {{{articles.thetext}}}
+
+                <br><hr>
+
+                {{#unless commentview}}
+
+                    <div class="text-center">
+
+                        <a class="btn btn-danger btn-lg" href="/commentshow/{{articles._id}}">Comments!</a>
+
+                        &nbsp<a href="/"><button class="btn btn-danger btn-lg">Next Article&nbsp<i class="fa fa-angle-double-right fa-lg"></i></button></a>
+
+                    </div>
+
+                {{/unless}}
+
+                {{#if commentview}}
+
+                    <div class="text-center">
+
+                        <a class="btn btn-danger btn-lg" href="/">Back</a>
+
+                    </div>
+
+                {{/if}}
+
+            </div>
+
+        </div>
+
+
+    {{#if commentview}}
+
+    </div>
+
+        <div class="col-md-6">
+
+			{{#each commentArray}}
+
+				{{>commentdisplay}}
+
+			{{/each}}
+
+				{{>comment}}
+
+        </div>
+
+    {{/if}}
+
+	{{#unless commentview}}
+	</div>
+	{{/unless}}
+</div>
+
+</div>
+
+{{>footerpartial}}
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="js/index.js"></script>

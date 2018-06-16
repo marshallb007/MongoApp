@@ -1,0 +1,23 @@
+{
+  "name": "mongoscrape",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cason Gordy",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.12.0",
+    "body-parser": "^1.15.1",
+    "cheerio": "^0.20.0",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.5",
+    "method-override": "^2.3.6",
+    "moment": "^2.13.0",
+    "mongoose": "^4.4.19",
+    "morgan": "^1.7.0"
+  }
+}
